@@ -1,28 +1,42 @@
-<h1 align="center" id="title">Application of Different Activation Functions on Dataset</h1>
+<img src="assets/banner.svg" width="100%" alt="Activation Functions, Measured. Sigmoid, tanh and ReLU on the same network and the same data. Which one actually learns?">
 
-<p id="description">The following project will examine the efficiency of 3 different activation functions ( Sigmoid | Tahn | Relu ) on MNIST dataset.</p>
+## The question
 
-  
-  
-<h2>🧐 Features</h2>
+The activation function is one line of code and one of the most consequential choices in a network. This project trains the same model on **MNIST** three times, once each with **sigmoid**, **tanh** and **ReLU**, on a CUDA GPU, and compares how they learn.
 
-Here're some of the project's best features:
+## What is inside
 
-*   The project runs on Cuda GPU
-*   Usage of graphs for deeper understanding
+- Three activation functions (sigmoid, tanh, ReLU) on one architecture
+- Training on a **CUDA GPU**
+- Plots of the functions, the training loss and the validation accuracy for a deeper understanding
 
-<h2>🛠️ Installation Steps:</h2>
+## Results
 
-<p>1. Download spec-file.txt</p>
+In this setup, **tanh** learns fastest (about 70% validation accuracy after ten epochs), **ReLU** follows (about 44%), and **sigmoid stays at chance level** (about 10% on ten classes) with a flat loss: the saturation behaviour that makes sigmoid a poor choice for hidden layers, made visible. Values are read from the plots below.
 
-<p>2. Follow the instructions into Conda_Virtual_Env.txt</p>
+<table>
+<tr><td width="33%" valign="top"><img src="graphs/activation_functions.png" width="100%" alt="The three functions"><br><sub>The three functions</sub></td><td width="33%" valign="top"><img src="graphs/accuracy_of_activation_functions.png" width="100%" alt="Validation accuracy per epoch"><br><sub>Validation accuracy per epoch</sub></td><td width="33%" valign="top"><img src="graphs/loss_of_activation_functions.png" width="100%" alt="Training loss per iteration"><br><sub>Training loss per iteration</sub></td></tr>
+</table>
 
-  
-  
-<h2>💻 Built with</h2>
+## Run it
 
-Technologies used in the project:
+1. Download `spec-file.txt`.
+2. Follow the instructions in `Conda_Virtual_Env.txt`:
 
-*   Python
-*   Pytorch
-*   Matplotlib 
+```bash
+# a new environment from the spec file
+conda create --name myenv --file spec-file.txt
+# or install the listed packages into an existing environment
+conda install --name myenv --file spec-file.txt
+```
+The full set of environment commands is in [`Conda_Virtual_Env.txt`](Conda_Virtual_Env.txt).
+
+Then open [`Activation_Functions.ipynb`](Activation_Functions.ipynb).
+
+## Built with
+
+`Python` · `PyTorch` · `Matplotlib`
+
+<br>
+
+<p align="center"><sub>Part of the work of <a href="https://github.com/johnnyk1090">Giannis Konteas</a> · end-to-end data science</sub></p>
